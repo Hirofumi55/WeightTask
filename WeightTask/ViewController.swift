@@ -13,6 +13,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     //ウエイトメニューを保存するリスト
     var weightList = [WeightData]()
     
+    let sectionTitle = ["Day1", "Day2", "Day3"]
+    
     //TableViewのOutLet定義
     @IBOutlet weak var tableView: UITableView!
     
@@ -56,11 +58,39 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                                             //保存処理
                                         }
                                         
-                                        
-                                        
+        }
+    }
+    
+    //セクションの個数を決める
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return sectionTitle.count
+    }
+    
+    //セクションごとの行数を決める
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    //セクションのタイトルを決める
+    func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+        return sectionTitle[section]
+    }
+    
+    //セルを作る
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "cell")
+        if weightList.count != 0 {
+            let sectionData = weightList[(indexPath as NSIndexPath).section]
+            //let cellData = sectionData[(indexPath as NSIndexPath).row]
+            cell.textLabel?.text = sectionData.menu
+            cell.detailTextLabel?.text = sectionData.rep + " " + sectionData.set
         }
         
-        
+        return cell
     }
+    
+    
+    
+    
     
 }
