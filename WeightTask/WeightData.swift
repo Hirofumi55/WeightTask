@@ -11,16 +11,16 @@ import Foundation
 class WeightData {
     
     //メニュー種類
-    var day: String? = ""
+    var day: String? = "1"
     
     //メニュー名
-    var name: String? = ""
+    var menu: String? = ""
     
     //Rep数
-     var rep: Int = 0
+     var rep: Stirng? = "0"
     
     //Set数
-    var set: Int = 0
+    var set: String? = "0"
     
     //check機能
     var check: Bool = false

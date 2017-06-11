@@ -12,7 +12,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="WeightTask" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="ViewController" customModule="WeightTask" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -37,6 +37,10 @@
                                                 </tableViewCellContentView>
                                             </tableViewCell>
                                         </prototypes>
+                                        <connections>
+                                            <outlet property="dataSource" destination="BYZ-38-t0r" id="Kjs-JH-Opd"/>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="NOo-8i-Edo"/>
+                                        </connections>
                                     </tableView>
                                 </subviews>
                             </stackView>
@@ -50,8 +54,15 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="am1-7X-jJb">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="XJr-Dx-KSt"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="XJr-Dx-KSt">
+                            <connections>
+                                <action selector="tapAddButton:" destination="BYZ-38-t0r" id="5ec-3I-oEa"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="N5N-R4-DPN" id="R41-zb-Y5f"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
