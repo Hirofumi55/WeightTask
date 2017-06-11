@@ -10,6 +10,8 @@ import Foundation
 
 class WeightData {
     
+    //メニュー種類
+    var day: String? = ""
     
     //メニュー名
     var name: String? = ""
