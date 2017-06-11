@@ -33,33 +33,47 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     //+ボタンをタップで呼ばれるメソッド
     @IBAction func tapAddButton(_ sender: Any) {
         //アラートダイアログを生成
-        let alertController = UIAlertController(title: "トレーニングメニュー追加",
-                                                message: "トレーニングメニューを入力してください",
-                                                preferredStyle: UIAlertControllerStyle.alert)
+        let alert = UIAlertController(title: "メニュー追加",
+                                      message: "メニューを入力してください",
+                                      preferredStyle: UIAlertControllerStyle.alert)
         
-        //テキストエリアを追加
-        alertController.addTextField(configurationHandler: nil)
+        //テキストフィールドを追加
+        alert.addTextField{(textField) -> Void in
+            //テキストフィールドにデリゲートする
+            //textField.delegate = self
+        }
+        
         
         //OKボタンを追加
-        let okAction = UIAlertAction(title: "OK",
-                                     style: UIAlertActionStyle.default) {(action:UIAlertAction) in
-                                        
-                                        //OKボタンがタップされた時の処理
-                                        if let textField = alertController.textFields?.first {
-                                            //ウエイトメニューをリストに追加
-                                            let weightData = WeightData()
-                                            weightData.menu = textField.text!
-                                            self.weightList.insert(weightData, at: 0)
-                                            
-                                            //テーブルに行が追加されたことを通知
-                                            self.tableView.insertRows(at: [IndexPath(row: 0, section: 0)],
-                                                                      with: UITableViewRowAnimation.right)
-                                            
-                                            //保存処理
-                                        }
-                                        
+        alert.addAction(
+            UIAlertAction(
+                title: "OK",
+                style: .default,
+                handler: {(action) -> Void in
+                    //ここに処理を記載
+            })
+        )
+        
+        //キャンセルボタン
+        alert.addAction(
+            UIAlertAction(
+                title: "キャンセル",
+                style: .cancel,
+                handler: nil)
+        )
+        
+        //アラートを表示
+        self.present(
+            alert,
+            animated: true,
+            completion: {
+                //表示完了後に実行
+                print("アラートダイアログの削除")
         }
+        )
+        
     }
+    
     
     //セクションの個数を決める
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -94,3 +108,4 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     
 }
+
