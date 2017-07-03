@@ -1,9 +1,9 @@
 //
 //  AppDelegate.swift
-//  WeightTask
+//  ConcentrationTimer
 //
-//  Created by Sasakura Hirofumi on 2017/06/11.
-//  Copyright © 2017 Sasakura Hirofumi. All rights reserved.
+//  Created by Sasakura Hirofumi on 2017/07/03.
+//  Copyright © 2017年 Sasakura Hirofumi. All rights reserved.
 //
 
 import UIKit

@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>WeightTask.xcscheme</key>
+		<key>ConcentrationTimer.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,7 +12,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>7E8BBA8E1EED20A50097F3AF</key>
+		<key>7E3CB3041F0A7CB20034345F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
